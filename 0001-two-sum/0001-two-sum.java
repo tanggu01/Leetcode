@@ -1,5 +1,5 @@
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
+    /*public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int[] result = new int[2];
         for (int i = 0; i < nums.length; i++) {
@@ -15,5 +15,19 @@ class Solution {
             }
         }
         return result;
+    }*/
+    
+    public int[] twoSum(int[] nums, int target) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int[] result = new int[2];
+    for (int i = 0; i < nums.length; i++) { //map에 새로운 값 put 할때마다 체크
+        if (map.containsKey(target - nums[i])) {
+            result[0] = i;
+            result[1] = map.get(target-nums[i]);
+            return result;
+        }
+        map.put(nums[i], i);
+    }   
+    return result;
     }
 }
