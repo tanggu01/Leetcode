@@ -4,15 +4,10 @@ class Solution {
         int p2 = n-1;
         int pos = m+n-1;
         while (p2 >= 0) { //nums2 다 옮길때까지
-            if (p1 >= 0 && nums1[p1] >= nums2[p2]) {
-               nums1[pos] = nums1[p1];
-               p1--;
-               pos--;
-            } else {
-                nums1[pos] = nums2[p2];
-                p2--;
-                pos--;
-            }
+            if (p1 >= 0 && nums1[p1] >= nums2[p2]) 
+                nums1[pos--] = nums1[p1--]; 
+            else 
+                nums1[pos--] = nums2[p2--];
         }
     }
 }
