@@ -1,4 +1,5 @@
 class Solution {
+    /* O(N + M) time, O(N) space complexity 
     public int[] intersect(int[] nums1, int[] nums2) {
         ArrayList<Integer> result = new ArrayList<>();
         Map<Integer, Integer> hashMap = new HashMap<>();
@@ -19,4 +20,33 @@ class Solution {
         }
         return res;
     }
+    */
+
+
+    /**
+    If Sorted - two pointer, no space complexity. //O(max(N, M))
+    */ 
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        ArrayList<Integer> resList = new ArrayList<>();
+        int p1 = 0, p2 = 0;
+        while (p1 < nums1.length && p2 < nums2.length) {
+            if (nums1[p1] == nums2[p2]) {
+                resList.add(nums1[p1]);
+                p1++;
+                p2++;
+            } else if (nums1[p1] > nums2[p2]) {
+                p2++;
+            } else {
+                p1++;
+            }
+        }
+        int[] res = new int[resList.size()];
+        for (int i = 0; i < resList.size(); i++){
+            res[i] = resList.get(i);
+        }
+        return res;
+    }
 }
+ 
