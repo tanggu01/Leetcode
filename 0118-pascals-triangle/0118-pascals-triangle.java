@@ -8,7 +8,7 @@ class Solution {
             List<Integer> lastArr = resList.get(i);
             List<Integer> newArr = new ArrayList<>();
             newArr.add(1);
-            for (int j = 0; j < i; j++) { // 1. 0+1: 2/ 2. 0+1 1+2  
+            for (int j = 0; j < i; j++) { 
                 newArr.add(lastArr.get(j) + lastArr.get(j+1));
             }
             newArr.add(1);
