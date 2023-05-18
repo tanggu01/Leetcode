@@ -6,7 +6,7 @@ class Solution {
         return image;
     }
 
-    public void dfs(int[][] image, int sr, int sc, int newColor, int baseColor, boolean[][] visited) { //targetColor, currColor
+    public void dfs(int[][] image, int sr, int sc, int newColor, int baseColor, boolean[][] visited) { 
         int rl = image.length;
         int cl = image[0].length;
 
