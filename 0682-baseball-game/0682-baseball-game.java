@@ -6,25 +6,26 @@ class Solution {
         for (String c : operations) {
             switch(c) {
             case "C" :
-                record.pop();
+                res -= record.pop();
                 break;
             case "D" :
                 int temp = record.peek();
                 record.push(temp * 2);
+                res += temp * 2;
                 break;
             case "+" :
-                int c1 =  record.pop();
+                int c1 = record.pop();
                 int c2 = record.peek();
                 record.push(c1);
                 record.push(c1 + c2);
+                res += c1 + c2;
                 break;
             default:    
-                record.push(Integer.parseInt(c));
+                int n = Integer.parseInt(c);
+                record.push(n);
+                res += n;
                 break;
             }
-        }
-        while (!record.isEmpty()) {
-            res += record.pop();
         }
         return res;
     }
