@@ -8,18 +8,17 @@ class Solution {
         int currDir = 0; // north
 
         for (int i = 0; i < 4; i++) {
-            for (char c : instructions.toCharArray()) {
-                if (c == 'G') {
-                    x += dir[currDir][0];
-                    y += dir[currDir][1];
-                }
-                else if (c == 'L') { 
+            for (int j = 0; j < instructions.length(); j++) {
+                if (instructions.charAt(j) == 'L') { 
                     // currDir += 1;
                     currDir = (currDir + 1) % 4;
                 }
-                else if (c == 'R') {
+                else if (instructions.charAt(j) == 'R') {
                     // currDir -= 1;
                     currDir = (currDir + 3) % 4; //same as -1
+                } else {
+                    x += dir[currDir][0];
+                    y += dir[currDir][1];
                 }
             }
             if (x == 0 && y == 0) return true;
