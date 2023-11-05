@@ -5,9 +5,10 @@ class Solution {
 
         for (int i = 0; i < nums.length; i++) {
             if (count == 0) {
+                count++;
                maj = nums[i];
             } 
-            if (maj == nums[i]) {
+            else if (maj == nums[i]) {
                 count++;
             } else {
                 count--;
