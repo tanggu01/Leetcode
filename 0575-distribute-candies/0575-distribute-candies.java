@@ -1,6 +1,6 @@
 class Solution {
     public int distributeCandies(int[] candyType) {
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>(candyType.length / 2);
         for (int candy : candyType) {
             set.add(candy);
         }
