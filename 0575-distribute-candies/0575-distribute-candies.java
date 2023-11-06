@@ -4,6 +4,6 @@ class Solution {
         for (int candy : candyType) {
             set.add(candy);
         }
-        return (set.size() > candyType.length / 2) ? candyType.length / 2 : set.size(); 
-    }
+        return (set.size() > candyType.length / 2) ? candyType.length / 2 : set.size();
+    } 
 }
